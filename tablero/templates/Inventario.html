@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %} Logeo de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="row g-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <br><br> <br> 
+        <h4 class="mb-3">Inventario sucursal</h4>
+        <form class="needs-validation" action="{% url 'guardar_estado' %}" method="POST">
+            <div class="row g-3">
+                <div class="col-sm-3">
+                    <label for="sucursal" class="form-label">Sucursal</label>
+                    <select class="form-select" id="sucursal" name="sucursal" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <label for="maquina" class="form-label">Maquina</label>
+                    <select class="form-select" id="maquina" name="maquina" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>                
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-secondary btn-sm">Registrar</button>
+                    <br><br><br>
+                </div>    
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  {% endblock %}

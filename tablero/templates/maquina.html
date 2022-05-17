@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block title %} Logeo de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="row g-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <br><br> <br> 
+        <h4 class="mb-3">Datos de maquinas</h4>
+        <form class="needs-validation" action="{% url 'guardar_estado' %}" method="POST">
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label for="nmaquina" class="form-label">Nombre de la maquina</label>
+                    <input type="text" class="form-control" id="nmaquina" name="nmaquina" placeholder="Nombre de la maquina" value="" required>
+                    <div class="invalid-feedback">
+                        El nombre de la maquina es requerido.
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <label for="tmaquina" class="form-label">Tipo de maquina</label>
+                    <select class="form-select" id="tmaquina" name="tmaquina" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>                
+                <div class="col-sm-8">
+                    <label for="genero" class="form-label">Genero</label>
+                    <input type="text" class="form-control" id="genero" name="genero" placeholder="Captura el genero de la maquina" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        El genero de la maquina es requerido.
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <label for="epremio" class="form-label">Entrega premio</label>
+                    <select class="form-select" id="epremio" name="epremio" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>    
+                <div class="col-sm-4">
+                    <label for="serie" class="form-label">Numero de serie</label>
+                    <input type="text" class="form-control" id="serie" name="serie" placeholder="Captura el numero de serie" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        El numero de serie es requerido.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-secondary btn-sm">Registrar</button>
+                    <br><br><br>
+                </div>    
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block title %} Logeo de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="row g-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <br><br> <br> 
+        <h4 class="mb-3">Poliza de gastos diarios</h4>
+        <form class="needs-validation" action="{% url 'guardar_estado' %}" method="POST">
+            <div class="row g-3">
+                <div class="col-sm-3">
+                    <label for="estado" class="form-label">Gasto diario</label>
+                    <select class="form-select" id="gdiario" name="gdiario" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <label for="municipio" class="form-label">Sucursal</label>
+                    <select class="form-select" id="sucursal" name="sucursal" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <label for="domicilio" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Captura la descripción" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        La descripción es requerida.
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <label for="lastName" class="form-label">Precio</label>
+                    <input type="text" class="form-control" id="precio" name="Precio" placeholder="Captura el precio" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        El precio es requerido.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-secondary btn-sm">Registrar</button>
+                    <br><br><br>
+                </div>    
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  {% endblock %}

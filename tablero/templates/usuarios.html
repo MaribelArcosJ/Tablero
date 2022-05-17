@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %} Listado de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="row g-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <br><br><br>
+        <h1>Listado de usuarios</h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <caption>Listado de usuarios</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido Paterno</th>
+                    <th scope="col">Apellido Materno</th>
+                    <th scope="col">Sucursal</th>
+                    <th scope="col">Editar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for usuario in usuarios %}
+                        <tr>
+                            <td>{{usuario.id_personal}}</td>
+                            <td>{{usuario.nombre}}</td>
+                            <td>{{usuario.apellido_paterno}}</td>
+                            <td>{{usuario.apellido_materno}}</td>
+                            <td>{{usuario.id_sucursal}}</td>
+                            <td><button type="button" class="btn btn-outline-dark"><a href="{% url 'actualizar_usuario' %}?id_personal={{usuario.id_personal}}">Editar usuario</a></button></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>        
+        </div>        
+    </div>
+    <div class="col-2"></div>
+  </div>
+  
+  {% endblock %}

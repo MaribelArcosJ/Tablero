@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %} Logeo de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="row g-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <br><br> <br> 
+        <h4 class="mb-3">Captura de premios</h4>
+        <form class="needs-validation" action="{% url 'guardar_estado' %}" method="POST">
+            <div class="row g-3">
+                <div class="col-sm-4">
+                    <label for="firstName" class="form-label">Premio</label>
+                    <input type="text" class="form-control" id="premio" name="premio" placeholder="Captura el premio" value="" required>
+                    <div class="invalid-feedback">
+                        El premio es requerido.
+                    </div>
+                </div>                
+                <div class="col-sm-4">
+                    <label for="firstName" class="form-label">Precio</label>
+                    <input type="text" class="form-control" id="precio" name="precio" placeholder="Captura el precio del premio" value="" required>
+                    <div class="invalid-feedback">
+                        El precio del premio es requerido.
+                    </div>
+                </br>
+                </div>    
+            </div>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-secondary btn-sm">Registrar</button>
+                    <br><br><br>
+                </div>    
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  {% endblock %}

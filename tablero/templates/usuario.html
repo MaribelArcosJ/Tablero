@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+
+{% block title %} Logeo de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="row g-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <br><br> <br> 
+        <h4 class="mb-3">Datos de usuario</h4>
+        <form class="needs-validation" action="{% url 'guardar_usuario' %}" method="POST">
+            {% csrf_token %}
+            <div class="row g-3">
+                <div class="col-sm-4">
+                    <label for="firstName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="firstName" name="nombre" placeholder="Nombre(s)" value="" required>
+                    <div class="invalid-feedback">
+                        El nombre es requerido.
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <label for="lastName" class="form-label">Apellido paterno</label>
+                    <input type="text" class="form-control" id="lastName" name="paterno" placeholder="Apellido paterno" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        El apellido paterno es requerido.
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <label for="lastName" class="form-label">Apellido materno</label>
+                    <input type="text" class="form-control" id="lastName" name="materno" placeholder="Apellido materno" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        El apellido materno es requerido.
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <label for="firstName" class="form-label">Numero de seguro social <span
+                            class="text-muted">(Opcional)</span></label>
+                    <input type="text" class="form-control" id="firstName" name="nss" placeholder="N&uacute;mero seguro social"
+                        value="">
+                </div>
+                <div class="col-sm-4">
+                    <label for="lastName" class="form-label">Curp</label>
+                    <input type="text" class="form-control" id="lastName" name="curp" placeholder="CURP" value="" required>
+                    <div class="invalid-feedback">
+                        La CURP es requerida.
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <label for="lastName" class="form-label">Tel&eacute;fono</label>
+                    <input type="text" class="form-control" id="lastName" name="telefono" placeholder="Tel&eacute;fono" value="" required>
+                    <div class="invalid-feedback">
+                        La CURP es requerida.
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <label for="lastName" class="form-label">Numero de cuenta <span class="text-muted">(Opcional)</span></label>
+                    <input type="text" class="form-control" id="lastName" name="num_cta"
+                        placeholder="N&uacute;mero de cuenta bancaria" value="" required>
+                    <div class="invalid-feedback">
+                        El correo es requerido.
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label for="email" class="form-label">Correo <span class="text-muted">(Opcional)</span></label>
+                    <input type="email" class="form-control" id="email" name="correo" placeholder="you@ejemplo.com">
+                    <div class="invalid-feedback">
+                        El correo electr&oacute;nico es requerido..
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label for="address" class="form-label">Contraseña <span class="text-muted">(Opcional)</span></label>
+                    <input type="text" class="form-control" id="address" name="contrasena" placeholder="contrase&ntilde;a" required>
+                    <div class="invalid-feedback">
+                        La contrase&ntilde;a es requerida.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="country" class="form-label">Sucursal</label>
+                    <select class="form-select" id="country" name="sucursal" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="country" class="form-label">Puesto</label>
+                    <select class="form-select" id="country" name="puesto" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="country" class="form-label">Tipo de pago</label>
+                    <select class="form-select" id="country" name="tipo_pago" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="country" class="form-label">Periodo de pago</label>
+                    <select class="form-select" id="country" name="periodo_pago" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-secondary btn-sm">Registrar</button>
+                    <br><br><br>
+                </div>    
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  {% endblock %}

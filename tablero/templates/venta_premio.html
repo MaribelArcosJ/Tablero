@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %} Logeo de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="row g-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <br><br> <br> 
+        <h4 class="mb-3">Venta premio</h4>
+        <form class="needs-validation" action="{% url 'guardar_estado' %}" method="POST">
+            <div class="row g-3">
+                <div class="col-sm-3">
+                    <label for="maquina" class="form-label">Premio</label>
+                    <select class="form-select" id="premio" name="premio" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>                
+                <div class="col-sm-8">
+                    <label for="genero" class="form-label">Maquina</label>
+                    <input type="text" class="form-control" id="maquina" name="maquina" placeholder="Captura el monto de venta de la maquina" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        El monto de venta de la maquina es requerido.
+                    </div>
+                </div>                
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-secondary btn-sm">Registrar</button>
+                    <br><br><br>
+                </div>    
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  {% endblock %}

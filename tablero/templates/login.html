@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %} Logeo de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="container">   
+  <div class="row justify-content-start">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <br><br><br>
+      <form method="post">
+        {% csrf_token %}
+        <h1 class="h3 mb-3 fw-normal">Ingresa los datos del usuario:</h1>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="user" placeholder="name@example.com" name="mail" required>
+          <label for="floatingInput">Correo Electr&oacute;nico</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+          <label for="floatingPassword">Password</label>
+        </div>
+        <button type="submit" class="btn btn-secondary btn-sm">Ingresar</button>
+        <button type="reset" class="btn btn-outline-dark btn-sm">Limpiar campos</button>
+        <a class="btn btn-outline-dark btn-sm" aria-current="page" href="{% url 'usuario' %}">Registrarse</a>
+        <!--button type="button" class="btn btn-outline-dark btn-sm" onclick="window.location='usuario';">Registrarse</button-->
+        <br><br>
+        {% if messages %}
+          <b>{{msg}}</b>
+        {% endif %}
+      </form>
+    </div>
+    <div class="col-3"></div>    
+  </div>
+</div>
+{% endblock %}

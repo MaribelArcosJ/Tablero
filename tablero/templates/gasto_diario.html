@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %} Logeo de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="row g-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <br><br> <br> 
+        <h4 class="mb-3">Gasto diario</h4>
+        <form class="needs-validation" action="{% url 'guardar_estado' %}" method="POST">
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label for="ngasto" class="form-label">Nombre del gasto</label>
+                    <input type="text" class="form-control" id="ngasto" name="ngasto" placeholder="Nombre del gasto" value="" required>
+                    <div class="invalid-feedback">
+                        El nombre del gasto es requerido.
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <label for="descripcion" class="form-label">Descripción del gasto</label>
+                    <input type="text" class="form-control" id="descripciong" name="descripciong" placeholder="Captura la descripción del gasto" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        La descripcion del gasto es requerido.
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-secondary btn-sm">Registrar</button>
+                    <br><br><br>
+                </div>    
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  {% endblock %}

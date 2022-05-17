@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block title %} Logeo de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="row g-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <br><br> <br> 
+        <h4 class="mb-3">Datos de sucursal</h4>
+        <form class="needs-validation" action="{% url 'guardar_estado' %}" method="POST">
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label">Nombre de la Sucursal</label>
+                    <input type="text" class="form-control" id="sucursal" name="sucursal" placeholder="Nombre de la sucursal" value="" required>
+                    <div class="invalid-feedback">
+                        El nombre de la sucursal es requerido.
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <label for="estado" class="form-label">Estado</label>
+                    <select class="form-select" id="estado" name="estado" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <label for="municipio" class="form-label">Municipio</label>
+                    <select class="form-select" id="municipio" name="municipio" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Selecciona una opci&oacute;n.
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <label for="domicilio" class="form-label">Domicilio de la sucursal</label>
+                    <input type="text" class="form-control" id="domicilio" name="domicilio" placeholder="Captura el domicilio" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        El domicilio es requerido.
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <label for="lastName" class="form-label">Telefono de sucursal</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Captura el telefono" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        El telefono es requerido.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-secondary btn-sm">Registrar</button>
+                    <br><br><br>
+                </div>    
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  {% endblock %}

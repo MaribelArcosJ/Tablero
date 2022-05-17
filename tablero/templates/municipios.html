@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %} Logeo de usuarios {% endblock %} 
+
+{% block content %}
+
+<div class="row g-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <br><br> <br> 
+        <h4 class="mb-3">Captura de estados</h4>
+        <form class="needs-validation" action="{% url 'guardar_estado' %}" method="POST">
+            <div class="row g-3">
+                <div class="col-sm-4">
+                    <label for="firstName" class="form-label">Nombre del municipio</label>
+                    <input type="text" class="form-control" id="municipio" name="municipio" placeholder="Captura nombre del municipio" value="" required>
+                    <div class="invalid-feedback">
+                        El nombre del municipio es requerido.
+                    </div>                
+                </div>                
+            </div>
+            <div class="col-md-3">
+                <label for="country" class="form-label">Estado</label>
+                <select class="form-select" id="country" name="tipo_pago" required>
+                    <option value="">Selecciona...</option>
+                    <option value="1">United States</option>
+                </select>
+                <div class="invalid-feedback">
+                    Selecciona una opci&oacute;n.
+                </div>
+                <br>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-secondary btn-sm">Registrar</button>
+                    <br><br><br>
+                </div>    
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  {% endblock %}
